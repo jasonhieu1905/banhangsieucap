@@ -1,10 +1,13 @@
+import { BaseService } from './../service/base.service';
+import { HomeModule } from './../home/home.module';
 import { LoginModule } from './../admin/login/login.module';
 import { LoginComponent } from './../admin/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule  } from '@angular/core';
 import { routing } from './app.route';
 
 import { AppComponent } from './app.component';
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -12,10 +15,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     LoginModule,
+    HomeModule,
     routing
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
