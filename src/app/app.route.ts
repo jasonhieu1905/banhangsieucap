@@ -1,4 +1,5 @@
 import { HomeComponent } from './../home/home.component';
+import { ProductComponent } from './../product/product.component';
 import { LoginComponent } from './../admin/login/login.component';
 import { AppComponent } from './app.component';
 import { ModuleWithProviders }  from '@angular/core';
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'category/:id',
+    component: ProductComponent   
   }
 ];
 

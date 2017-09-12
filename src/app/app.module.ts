@@ -1,3 +1,4 @@
+import { ProductModule } from './../product/product.module';
 import { BaseService } from './../service/base.service';
 import { HomeModule } from './../home/home.module';
 import { LoginModule } from './../admin/login/login.module';
@@ -18,6 +19,7 @@ import { HttpModule } from "@angular/http";
     HttpModule,
     LoginModule,
     HomeModule,
+    ProductModule,
     routing
   ],
   providers: [BaseService],
