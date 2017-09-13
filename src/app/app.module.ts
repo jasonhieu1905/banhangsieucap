@@ -1,3 +1,5 @@
+import { FooterModule } from './../footer/footer.module';
+import { HeaderModule } from './../header/header.module';
 import { ProductModule } from './../product/product.module';
 import { BaseService } from './../service/base.service';
 import { HomeModule } from './../home/home.module';

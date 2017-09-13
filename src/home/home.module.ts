@@ -1,3 +1,5 @@
+import { FooterModule } from './../footer/footer.module';
+import { HeaderModule } from './../header/header.module';
 import { CategoryService } from './../service/category.service';
 import { ContactService } from './../service/contact.service';
 import { HomeComponent } from './home.component';
@@ -12,7 +14,9 @@ import { CommonModule } from "@angular/common";
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HeaderModule,
+    FooterModule
   ],
   providers: [ContactService, CategoryService],
 })

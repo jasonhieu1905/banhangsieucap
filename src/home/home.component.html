@@ -1,15 +1,6 @@
-<section class="banner" role="banner">
-  <header id="header">
-    <div class="header-content clearfix"> <a class="logo" href="index.html"><img src="assets/images/logo.png" alt=""></a>
-      <nav class="navigation" role="navigation">
-        <ul class="primary-nav">
-          <li>{{contact.phone1}}</li>
-          <li><a href="mainlto:hello@phdl.co">{{contact.email}}</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
-  </header>
-</section>
+
+<app-header [contact]="contact" ></app-header>
+
 <!-- header top section -->
 <!-- header content section -->
 <section id="hero" class="section ">
@@ -85,15 +76,5 @@
 </section>
 <!-- service section -->
 <!-- footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-6 left">
-      <h4>Let's work together</h4>
-      <p> Call: 612.269.8419 OR Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
-    </div>
-    <div class="col-md-6 right">
-      <p>© 2015 All rights reserved. All Rights Reserved<br> Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p>
-    </div>
-  </div>
-</footer>
+<app-footer></app-footer>
 <!-- footer section -->

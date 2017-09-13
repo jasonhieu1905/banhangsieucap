@@ -24,7 +24,7 @@ export class HomeComponent {
         console.log('error when getting contact');
       });
       
-      this.categoryService.getAllContact().subscribe(res => {
+      this.categoryService.getAllCategories().subscribe(res => {
         this.categories = res.json();
       },error => {
         console.log('error when getting category');

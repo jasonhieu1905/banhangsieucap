@@ -8,7 +8,7 @@ export class CategoryService{
     constructor(private baseService: BaseService){}
 
     private url_get_all = 'category-get-all.php';
-    public  getAllContact() {
+    public  getAllCategories() {
         let url = ConstantUtil.URL + this.url_get_all;
         return this.baseService.get(url);
     }

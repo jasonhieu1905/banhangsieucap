@@ -11,14 +11,21 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ProductComponent {
 
-  constructor(private contactService: ContactService, 
+  private contact = {};
+
+  constructor(private contactService: ContactService,
     private categoryService: CategoryService,
-    private route: ActivatedRoute){}
-  
+    private route: ActivatedRoute) { }
+
   ngOnInit() {
+    this.contactService.getAllContact().subscribe(res => {
+      this.contact = res.json()[0];
+    }, error => {
+      console.log('error when getting contact');
+    });
     this.route.params.subscribe(params => {
-       let id = +params['id']; 
-       console.log(id);
-   });
+      let id = +params['id'];
+      console.log(id);
+    });
   }
 }
