@@ -3,6 +3,7 @@ import { ConstantUtil } from './../util/const.util';
 import { ContactService } from './../service/contact.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'product',
@@ -15,7 +16,10 @@ export class ProductComponent {
 
   constructor(private contactService: ContactService,
     private categoryService: CategoryService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) { 
+
+    
+  }
 
   ngOnInit() {
     this.contactService.getAllContact().subscribe(res => {
@@ -28,4 +32,6 @@ export class ProductComponent {
       console.log(id);
     });
   }
+
+  
 }
