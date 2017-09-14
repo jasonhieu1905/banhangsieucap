@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FooterModule } from './../footer/footer.module';
 import { HeaderModule } from './../header/header.module';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,8 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
-    ProductComponent
+    ProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,

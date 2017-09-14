@@ -1,23 +1,32 @@
 
 <app-header [contact]="contact"></app-header>
-<!-- header content section -->
-<section id="hero" class="section ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7 col-sm-6 hero">
-          <div class="hero-content">
-            <h1>{{contact.title1}}</h1>
-          </div>
-          <!-- hero -->
-        </div>
-        <div class="col-md-5 col-sm-6 hero">
-          <div class="hero-content">
-            <p>{{contact.introduction1}}</p>
-          </div>
-          <!-- hero -->
-        </div>
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <hr class="section">
       </div>
     </div>
-  </section>
-    <!--https://codepen.io/virgilpana/pen/RNYQwB -->
+    <div class="row">
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+      <div class="col-sm-4 portfolio-item" >
+        <product-detail></product-detail>
+      </div>
+    </div>
+  </div>
+</section>
 <app-footer></app-footer>
