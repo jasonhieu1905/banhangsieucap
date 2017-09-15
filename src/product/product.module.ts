@@ -1,3 +1,4 @@
+import { ProductService } from './../service/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FooterModule } from './../footer/footer.module';
 import { HeaderModule } from './../header/header.module';
@@ -14,6 +15,9 @@ import { NgModule } from '@angular/core';
     CommonModule,
     HeaderModule,
     FooterModule
+  ],
+  providers: [
+    ProductService
   ]
 })
 export class ProductModule { }

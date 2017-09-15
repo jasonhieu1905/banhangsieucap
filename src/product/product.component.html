@@ -8,23 +8,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
-      </div>
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
-      </div>
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
-      </div>
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
-      </div>
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
-      </div>
-      <div class="col-sm-4 portfolio-item" >
-        <product-detail></product-detail>
+      <div class="col-sm-4 portfolio-item" *ngFor="let product of productByCategory" >
+        <product-detail [product]="product"></product-detail>
       </div>
     </div>
   </div>

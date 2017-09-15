@@ -1,3 +1,4 @@
+import { ProductService } from './../service/product.service';
 import { CategoryService } from './../service/category.service';
 import { ConstantUtil } from './../util/const.util';
 import { ContactService } from './../service/contact.service';
@@ -14,11 +15,13 @@ export class ProductComponent {
 
   private contact = {};
 
+  private productByCategory = [];
+
   constructor(private contactService: ContactService,
     private categoryService: CategoryService,
-    private route: ActivatedRoute) { 
+    private productService: ProductService,
+    private route: ActivatedRoute) {
 
-    
   }
 
   ngOnInit() {
@@ -29,9 +32,13 @@ export class ProductComponent {
     });
     this.route.params.subscribe(params => {
       let id = +params['id'];
-      console.log(id);
+      this.productService.getProductByCategoryId(id).subscribe(res => {
+        this.productByCategory = res.json();
+      }, error => {
+        console.log('error when getting product by category');
+      });
     });
   }
 
-  
+
 }
