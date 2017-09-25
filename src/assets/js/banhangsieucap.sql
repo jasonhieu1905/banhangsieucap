@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 14, 2017 at 07:13 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th9 25, 2017 lúc 06:17 PM
+-- Phiên bản máy phục vụ: 10.1.25-MariaDB
+-- Phiên bản PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banhangsieucap`
+-- Cơ sở dữ liệu: `banhangsieucap`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cấu trúc bảng cho bảng `account`
+--
+
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `account`
+--
+
+INSERT INTO `account` (`id`, `username`, `password`) VALUES
+(1, 'hieu', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `category`
 --
 
 CREATE TABLE `category` (
@@ -36,7 +55,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `category`
+-- Đang đổ dữ liệu cho bảng `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `description`, `image`) VALUES
@@ -50,7 +69,7 @@ INSERT INTO `category` (`id`, `name`, `description`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Cấu trúc bảng cho bảng `contact`
 --
 
 CREATE TABLE `contact` (
@@ -66,21 +85,22 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `contact`
+-- Đang đổ dữ liệu cho bảng `contact`
 --
 
 INSERT INTO `contact` (`id`, `title1`, `introduction1`, `title2`, `introduction2`, `phone1`, `phone2`, `email`, `slogan`) VALUES
-(1, 'title 1', 'introduction 1', 'title 2', 'introduction 2', '0938190592', '01203672707', 'hieu@gmail.com', 'Let\'s work together'),
+(1, 'title 1', 'introduction 1', 'title 2', 'A&D Company, Limited is a world-class producer of advanced measuring, monitoring, controlling and testing instruments', '0938190592', '01203672707', 'hieu@gmail.com', 'Let\'s work together'),
 (2, 'title2', 'intro1\r\n', 'title2', 'intro2', 'phone 1', 'phone 2 ', 'test', 'This is our life');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `size` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -91,41 +111,64 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Đang đổ dữ liệu cho bảng `product`
+--
+
+INSERT INTO `product` (`id`, `category_id`, `name`, `description`, `size`, `parent_image`, `children_image`, `price`, `priority`) VALUES
+(1, 1, 'product1', 'description for product 1 description for product 1 description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
+(2, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
+(3, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
+(4, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg', '100,000VND', 1),
+(5, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
+(6, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1);
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `category`
+-- Chỉ mục cho bảng `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact`
+-- Chỉ mục cho bảng `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT cho bảng `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

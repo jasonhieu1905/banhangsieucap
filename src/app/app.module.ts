@@ -1,3 +1,4 @@
+import { AdminHomeModule } from './../admin/user/admin-home.module';
 import { FooterModule } from './../footer/footer.module';
 import { HeaderModule } from './../header/header.module';
 import { ProductModule } from './../product/product.module';
@@ -22,6 +23,7 @@ import { HttpModule } from "@angular/http";
     LoginModule,
     HomeModule,
     ProductModule,
+    AdminHomeModule,
     routing
   ],
   providers: [BaseService],

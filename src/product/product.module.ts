@@ -1,3 +1,4 @@
+import { PopupComponent } from './popup/popup.component';
 import { ProductService } from './../service/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FooterModule } from './../footer/footer.module';
@@ -9,7 +10,8 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    PopupComponent
   ],
   imports: [
     CommonModule,

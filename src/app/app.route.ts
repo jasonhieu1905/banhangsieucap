@@ -1,3 +1,4 @@
+import { AdminHomeComponent } from './../admin/user/admin-home.component';
 import { HomeComponent } from './../home/home.component';
 import { ProductComponent } from './../product/product.component';
 import { LoginComponent } from './../admin/login/login.component';
@@ -23,6 +24,10 @@ export const routes: Routes = [
   {
     path: 'category/:id',
     component: ProductComponent   
+  },
+  {
+    path: 'admin/home',
+    component: AdminHomeComponent   
   }
 ];
 

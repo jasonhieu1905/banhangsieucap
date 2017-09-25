@@ -8,8 +8,7 @@ import * as $ from 'jquery';
 
 @Component({
   selector: 'product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  templateUrl: './product.component.html'
 })
 export class ProductComponent {
 

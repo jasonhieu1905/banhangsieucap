@@ -1,9 +1,6 @@
 <?php
+include 'mysql.php';
 header('Access-Control-Allow-Origin: *');
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "banhangsieucap";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

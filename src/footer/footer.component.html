@@ -1,11 +1,18 @@
 <footer class="footer">
     <div class="container">
-      <div class="col-md-6 left">
-        <h4>Let's work together</h4>
-        <p> Call: 612.269.8419 OR Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
+      <div class="col-md-4 left">
+        <h4>{{contact.slogan}}</h4>
+        <p> Call: {{contact.phone1}} OR {{contact.phone2}} Email : <a href="mailto:{{contact.email}}"> {{contact.email}} </a></p>
       </div>
-      <div class="col-md-6 right">
-        <p>© 2015 All rights reserved. All Rights Reserved<br> Made with <i class="fa fa-heart pulse"></i> by <a href="http://www.designstub.com/">Designstub</a></p>
+
+      <div class="col-md-4 service text-center">
+        <span class="icon icon-browser"></span>
+        <span class="icon icon-trophy"></span>
+        <span class="icon icon-megaphone"></span>
+      </div>
+
+      <div class="col-md-4 right">
+        <p>{{contact.introduction2}}</p>
       </div>
     </div>
   </footer>
