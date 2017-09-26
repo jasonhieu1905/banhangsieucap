@@ -1,0 +1,16 @@
+<div id="myModal{{product.id}}" class="modal">
+    <span class="close cursor" (click)="closeModal()" style="z-index: 200">&times;</span>
+    <div class="modal-content">
+        <div class="mySlides" *ngFor="let image of images; let i = index">
+            <div class="numbertext">{{i}}</div>
+            <img src="assets/images/product/{{image}}" style="width:100%">
+        </div>
+
+        <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+        <a class="next" (click)="plusSlides(1)">&#10095;</a>
+
+        <div class="column" *ngFor="let image of images; let i = index">
+            <img class="demo cursor" src="assets/images/product/{{image}}"  style="width:100%" (click)="currentSlide(i+1)">
+        </div>
+    </div>
+</div>

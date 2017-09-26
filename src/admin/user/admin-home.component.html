@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+    <li class="active" ><a data-toggle="tab" href="#user">User</a></li>
+    <li><a data-toggle="tab" href="#category">Category</a></li>
+    <li><a data-toggle="tab" href="#product">Product</a></li>
+  </ul>
+
+  <div class="tab-content form-admin-home">
+    <div id="user" class="tab-pane fade active in">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="form-group">
+          <label for="usr">Name:</label>
+          <input type="text" formControlName="username" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" formControlName="password" class="form-control" id="pwd">
+        </div>
+        <div class="form-group">
+          <label for="pwd">New Password:</label>
+          <input type="password" formControlName="newPassword" class="form-control" id="newPws">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Retype New Password:</label>
+          <input type="password" formControlName="retypeNewPassword" class="form-control" id="retypeNewPwd">
+        </div>
+        <div *ngIf="userForm.invalid">
+            <h4 class="error">Check again</h4>
+          </div>
+        <button type="submit" class="submit">Update</button>
+      </form>
+
+    </div>
+    <div id="category" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <category-admin></category-admin>
+    </div>
+    <div id="product" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
