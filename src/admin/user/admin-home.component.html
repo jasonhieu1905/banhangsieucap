@@ -2,13 +2,14 @@
   <h2>Dynamic Tabs</h2>
   <ul class="nav nav-tabs">
     <li class="active" ><a data-toggle="tab" href="#user">User</a></li>
+    <li><a data-toggle="tab" href="#contact">Contact</a></li>
     <li><a data-toggle="tab" href="#category">Category</a></li>
     <li><a data-toggle="tab" href="#product">Product</a></li>
   </ul>
 
-  <div class="tab-content form-admin-home">
+  <div class="tab-content">
     <div id="user" class="tab-pane fade active in">
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)" class="form-admin-home">
         <div class="form-group">
           <label for="usr">Name:</label>
           <input type="text" formControlName="username" class="form-control" id="usr">
@@ -30,7 +31,9 @@
           </div>
         <button type="submit" class="submit">Update</button>
       </form>
-
+    </div>
+    <div id="contact" class="tab-pane fade">
+      <contact-admin></contact-admin>
     </div>
     <div id="category" class="tab-pane fade">
       <h3>Menu 2</h3>

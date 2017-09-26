@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th9 25, 2017 lúc 06:17 PM
+-- Thời gian đã tạo: Th9 26, 2017 lúc 06:53 PM
 -- Phiên bản máy phục vụ: 10.1.25-MariaDB
 -- Phiên bản PHP: 5.6.31
 
@@ -76,7 +76,6 @@ CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `title1` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `introduction1` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `title2` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `introduction2` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `phone1` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `phone2` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -88,9 +87,9 @@ CREATE TABLE `contact` (
 -- Đang đổ dữ liệu cho bảng `contact`
 --
 
-INSERT INTO `contact` (`id`, `title1`, `introduction1`, `title2`, `introduction2`, `phone1`, `phone2`, `email`, `slogan`) VALUES
-(1, 'title 1', 'introduction 1', 'title 2', 'A&D Company, Limited is a world-class producer of advanced measuring, monitoring, controlling and testing instruments', '0938190592', '01203672707', 'hieu@gmail.com', 'Let\'s work together'),
-(2, 'title2', 'intro1\r\n', 'title2', 'intro2', 'phone 1', 'phone 2 ', 'test', 'This is our life');
+INSERT INTO `contact` (`id`, `title1`, `introduction1`, `introduction2`, `phone1`, `phone2`, `email`, `slogan`) VALUES
+(1, 'Title1', 'introduction 1', 'AD Company, Limited is a world-class producer of advanced measuring, monitoring, controlling and testing instruments', '0938190592', '01203672707', 'hieu@gmail.com', 'You live only once'),
+(2, 'title2', 'intro1\r\n', 'intro2', 'phone 1', 'phone 2 ', 'test', 'This is our life');
 
 -- --------------------------------------------------------
 

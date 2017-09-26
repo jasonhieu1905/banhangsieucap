@@ -16,5 +16,4 @@ export class UserService{
         return this.baseService.post(url,data.toString());
     }
 
-    public getUser
 }
