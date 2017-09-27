@@ -1,3 +1,4 @@
+import { RequestUtil } from './../../util/request.util';
 import { ActivatedRoute } from '@angular/router';
 import { ContactModel } from './contact.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -41,14 +42,13 @@ export class ContactAdminComponent {
             return ;
         }
         this.errorMessage = '';
-        let params = new URLSearchParams();
-
-        for (var key in form.value) {
-            if (form.value.hasOwnProperty(key))
-                params.set(key, form.value[key]);
-        }
-        debugger;
+        let params = RequestUtil.getUrlSearchParam(form.value);
         this.contactService.updateContact(params.toString()).subscribe(res => {
+            if(res.json().status == 'success') {
+                alert('Update success');
+            } else {
+                this.errorMessage = 'Can not update';
+            }
             console.log(res);
         });
         
