@@ -25,7 +25,8 @@ export class LoginComponent {
         this.errorMessage = 'Username or password is incorrect';
         return ;
       }
-      let user = {username: this.username, password: this.password};
+      let user = {username: this.username};
+      localStorage.setItem('login','true');
       this.router.navigate(['admin/home'],  { queryParams: user});
     }, err => {
       this.errorMessage = 'Username or password is incorrect';

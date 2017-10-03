@@ -5,6 +5,8 @@
     <li><a data-toggle="tab" href="#contact">Contact</a></li>
     <li><a data-toggle="tab" href="#category">Category</a></li>
     <li><a data-toggle="tab" href="#product">Product</a></li>
+    <li><a data-toggle="tab" href="#category_image">Category Image</a></li>
+    <li><a data-toggle="tab" href="#product_image">Product Image</a></li>
   </ul>
 
   <div class="tab-content">
@@ -12,11 +14,11 @@
       <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)" class="form-admin-home">
         <div class="form-group">
           <label for="usr">Name:</label>
-          <input type="text" formControlName="username" class="form-control" id="usr">
+          <input type="text"  readonly formControlName="username" class="form-control" id="usr">
         </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" formControlName="password" class="form-control" id="pwd">
+          <input type="password" readonly value="*********" class="form-control" id="pwd">
         </div>
         <div class="form-group">
           <label for="pwd">New Password:</label>
@@ -36,12 +38,20 @@
       <contact-admin></contact-admin>
     </div>
     <div id="category" class="tab-pane fade">
-      <h3>Menu 2</h3>
+      <h3>Category</h3>
       <category-admin></category-admin>
     </div>
     <div id="product" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <h3>Product</h3>
+      <product-admin></product-admin>
     </div>
+    <div id="category_image" class="tab-pane fade">
+      <h3>Category Image</h3>
+      <category-admin-image></category-admin-image>
+    </div>
+    <div id="product_image" class="tab-pane fade">
+        <h3>Product Image</h3>
+        <product-admin-image></product-admin-image>
+      </div>
   </div>
 </div>

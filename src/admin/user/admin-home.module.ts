@@ -1,3 +1,6 @@
+import { ProductAdminImageModule } from './../product_image/product-admin-image.module';
+import { CategoryAdminImageModule } from './../category_image/category-admin-image.module';
+import { ProductAdminModule } from './../product/product-admin.module';
 import { ContactAdminModule } from './../contact/contact-admin.module';
 import { CategoryAdminModule } from './../category/category-admin.module';
 import { AdminHomeComponent } from './admin-home.component';
@@ -13,7 +16,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     CategoryAdminModule,
-    ContactAdminModule
+    ProductAdminModule,
+    ContactAdminModule,
+    CategoryAdminImageModule,
+    ProductAdminImageModule
   ],
   
 })
