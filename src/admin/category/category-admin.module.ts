@@ -1,8 +1,10 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { CategoryAdminComponent } from './category-admin.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {DataTableModule,SharedModule, DialogModule} from 'primeng/primeng';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -10,8 +12,13 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
-    Ng2SmartTableModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    DataTableModule,
+    DialogModule,
+    SharedModule
   ],
   exports: [
       CategoryAdminComponent

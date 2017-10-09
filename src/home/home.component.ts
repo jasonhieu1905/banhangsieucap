@@ -10,16 +10,16 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  private contact = {};
-  private category_url = ConstantUtil.CATEGORY_UPLOAD;
+  public contact = new Contact();
+  public category_url = ConstantUtil.CATEGORY_UPLOAD;
 
-  private categories = [];
+  public categories = [];
 
   constructor(private contactService: ContactService, private categoryService: CategoryService){}
   
   ngOnInit() {
       this.contactService.getAllContact().subscribe(res => {
-        this.contact = res.json()[0];
+        this.contact =  <Contact>(res.json()[0]);
       },error => {
         console.log('error when getting contact');
       });
@@ -31,3 +31,15 @@ export class HomeComponent {
       });
   }
 }
+
+class Contact {
+  public id: string;
+  public title1: string;
+  public introduction1: string;
+  public introduction2: string;
+  public phone1: string;
+  public phone2: string;
+  public email: string;
+  public slogan: string;
+}
+ 

@@ -11,6 +11,13 @@ export class CategoryService{
     private url_update = 'category-update.php';
     private url_add = 'category-add.php';
     private url_delete = 'category-delete.php';
+    private url_image = "category-get-images.php";
+
+    public getAllCategoriesImage() {
+        let url = ConstantUtil.URL + this.url_image;
+        return this.baseService.get(url);
+    }
+
     public  getAllCategories() {
         let url = ConstantUtil.URL + this.url_get_all;
         return this.baseService.get(url);

@@ -1,10 +1,14 @@
+<form action="{{url}}"  enctype="multipart/form-data" method="post">
 
-<form action="{{url}}" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-    <div class="col-sm-4 portfolio-item" *ngFor="let category of categories">
-        <span class="image-color">{{category.image}}</span>
-        <img class="category-image" src="assets/images/category/{{category.image}}" />
+    <div>
+        <label for='upload'>Add Attachments:</label>
+        <input id='upload' name="upload[]" type="file" multiple="multiple" />
     </div>
+
+    <p><input type="submit" name="submit" value="Submit"></p>
+
+</form>
+<div class="col-sm-4 portfolio-item" *ngFor="let file of files">
+    <span class="image-color">{{file}}</span>
+    <img class="category-image" src="assets/images/category/{{file}}" />
+</div>

@@ -12,9 +12,9 @@ import * as $ from 'jquery';
 })
 export class ProductComponent {
 
-  private contact = {};
+  public contact = {};
 
-  private productByCategory = [];
+  public productByCategory = [];
 
   constructor(private contactService: ContactService,
     private categoryService: CategoryService,
@@ -29,14 +29,16 @@ export class ProductComponent {
     }, error => {
       console.log('error when getting contact');
     });
-    this.route.params.subscribe(params => {
+ 
+
+    this.route.queryParams.subscribe(params=> {
       let id = +params['id'];
       this.productService.getProductByCategoryId(id).subscribe(res => {
         this.productByCategory = res.json();
       }, error => {
         console.log('error when getting product by category');
       });
-    });
+    })
   }
 
 

@@ -1,3 +1,64 @@
-<ng2-smart-table class="product-table" [settings]="settings" [source]="data" (deleteConfirm)="onDeleteConfirm($event)"
-(editConfirm)="onSaveConfirm($event)"
-(createConfirm)="onCreateConfirm($event)"></ng2-smart-table>
+<p-dataTable [value]="data" [(selection)]="selectedProduct"  selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <p-column field="id" header="Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-column field="product_id" header="Product Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-column field="category_id" header="Category Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-column field="name" header="Name" [sortable]="true"></p-column>
+    <p-column field="description" header="Description" [sortable]="true"></p-column>
+    <p-column field="size" header="Size" [sortable]="true" ></p-column>
+    <p-column field="parent_image" header="Parent Image" [style]="{'width': '100px'}" [sortable]="true"></p-column>
+    <p-column field="children_image" [style]="{'width': '225px'}" header="Children images" [sortable]="true"></p-column>
+    <p-column field="price" header="Price" [sortable]="true" ></p-column>
+    <p-column field="priority" header="Priority" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button"  style="float:left" (click)="showDialogToAdd()" label="Add">Add</button></div></p-footer>
+</p-dataTable>
+
+<p-dialog header="Product Details"  [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div style="width: 400px" class="ui-grid ui-grid-responsive ui-fluid" *ngIf="product">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="id">Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText readonly id="id" [(ngModel)]="product.id" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="product_id">Product Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="product_id" [(ngModel)]="product.product_id" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="category_id">Category Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="category_id" [(ngModel)]="product.category_id" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="name">Name</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="product.name" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="description">Description</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="description" [(ngModel)]="product.description" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="size">Size</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="size" [(ngModel)]="product.size" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="parent_image">Parent Image</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="parent_image" [(ngModel)]="product.parent_image" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="children_image">Children Image</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="children_image" [(ngModel)]="product.children_image" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="price">Price</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="price" [(ngModel)]="product.price" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="priority">Priority</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="priority" [(ngModel)]="product.priority" /></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button"  (click)="delete()" label="Delete">Delete</button>
+            <button type="button"  (click)="save()" label="Save">Save</button>
+        </div>
+    </p-footer>
+</p-dialog>

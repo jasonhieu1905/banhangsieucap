@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FooterModule } from './../footer/footer.module';
 import { HeaderModule } from './../header/header.module';
 import { CategoryService } from './../service/category.service';
@@ -16,7 +17,8 @@ import { CommonModule } from "@angular/common";
   imports: [
     CommonModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    RouterModule
   ],
   providers: [ContactService, CategoryService],
 })

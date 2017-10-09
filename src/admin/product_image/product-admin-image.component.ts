@@ -8,8 +8,8 @@ import $ from 'jquery';
     styleUrls: ['./product-admin-image.component.scss']
 })
 export class ProductAdminImageComponent {
-    private products: any;
-    private images = [];
+    public products: any;
+    public images = [];
     constructor(private productService: ProductService) {
         this.productService.getAllProduct().subscribe(res => {
             this.products = res.json();

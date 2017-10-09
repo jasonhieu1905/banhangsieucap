@@ -9,15 +9,15 @@ import { EventEmitter } from '@angular/core';
 })
 export class PopupComponent {
     @Input() product;
-    private slideIndex = 1;
+    public slideIndex = 1;
 
     @Input() showModal: boolean;
 
     @Output() showModalChange:EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    private images = [];
+    public images = [];
 
-    private myModal: any;
+    public myModal: any;
 
     constructor() { }
 

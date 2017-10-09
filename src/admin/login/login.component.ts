@@ -1,3 +1,4 @@
+import { ConstantUtil } from './../../util/const.util';
 import { UserService } from './../../service/user.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  private username: string;
-  private password: string;
-  private errorMessage: string;
+  public username: string;
+  public password: string;
+  public errorMessage: string;
   constructor(private userService: UserService, private router: Router) {
 
   }
@@ -26,7 +27,7 @@ export class LoginComponent {
         return ;
       }
       let user = {username: this.username};
-      localStorage.setItem('login','true');
+      localStorage.setItem(ConstantUtil.TOKEN_IS_LOGN,'true');
       this.router.navigate(['admin/home'],  { queryParams: user});
     }, err => {
       this.errorMessage = 'Username or password is incorrect';

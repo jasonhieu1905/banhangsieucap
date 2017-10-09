@@ -22,8 +22,9 @@ export const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'category/:id',
-    component: ProductComponent   
+    path: 'category',
+    component: ProductComponent 
+   
   },
   {
     path: 'admin/home',

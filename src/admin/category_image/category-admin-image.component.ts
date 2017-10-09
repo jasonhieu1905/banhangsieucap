@@ -10,13 +10,16 @@ import $ from 'jquery';
     styleUrls: ['./category-admin-image.component.scss'],
 })
 export class CategoryAdminImageComponent {
-    private categories: any;
-    private url = ConstantUtil.URL + 'upload-category.php';
+    public categories: any;
+    public files;
+    public url = ConstantUtil.URL + 'upload-category.php';
     constructor(private categoryService: CategoryService) {
         this.categoryService.getAllCategories().subscribe(res => {
             this.categories = res.json();
         });
+        this.categoryService.getAllCategoriesImage().subscribe(res => {
+            this.files = res.json();
+        })
     }
-
 
 }

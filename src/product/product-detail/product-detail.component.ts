@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 })
 export class ProductDetailComponent {
   @Input() product;
-  private showModal: boolean;
+  public showModal: boolean;
   constructor() { }
   ngAfterViewInit() {
   }

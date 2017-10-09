@@ -1,3 +1,39 @@
-<ng2-smart-table class="category-table" [settings]="settings" [source]="data" (deleteConfirm)="onDeleteConfirm($event)"
+<!-- <ng2-smart-table class="category-table" [settings]="settings" [source]="data" (deleteConfirm)="onDeleteConfirm($event)"
 (editConfirm)="onSaveConfirm($event)"
-(createConfirm)="onCreateConfirm($event)"></ng2-smart-table>
+(createConfirm)="onCreateConfirm($event)"></ng2-smart-table> -->
+
+
+<p-dataTable [value]="data" [(selection)]="selectedCategory"  selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <p-column field="id" header="Id" [sortable]="true"></p-column>
+    <p-column field="name" header="Name" [sortable]="true"></p-column>
+    <p-column field="description" header="Description" [sortable]="true"></p-column>
+    <p-column field="image" header="Image" [sortable]="true"></p-column>
+    <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button"  style="float:left" (click)="showDialogToAdd()" label="Add">Add</button></div></p-footer>
+</p-dataTable>
+
+<p-dialog header="Category Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="category">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="id">Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText readonly id="id" [(ngModel)]="category.id" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="year">Name</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="category.name" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="brand">Description</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="description" [(ngModel)]="category.description" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="color">Image</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="image" [(ngModel)]="category.image" /></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button"  (click)="delete()" label="Delete">Delete</button>
+            <button type="button"  (click)="save()" label="Save">Save</button>
+        </div>
+    </p-footer>
+</p-dialog>

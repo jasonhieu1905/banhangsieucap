@@ -6,17 +6,11 @@
 <section id="hero" class="section ">
   <div class="container">
     <div class="row">
-      <div class="col-md-7 col-sm-6 hero">
-        <div class="hero-content">
-          <h1>{{contact.title1}}</h1>
-        </div>
-        <!-- hero -->
+      <div class="col-md-6 col-sm-6 hero">
+          <h2>{{contact.title1}}</h2>
       </div>
-      <div class="col-md-5 col-sm-6 hero">
-        <div class="hero-content">
+      <div class="col-md-6 col-sm-6 hero">
           <p>{{contact.introduction1}}</p>
-        </div>
-        <!-- hero -->
       </div>
     </div>
   </div>
@@ -32,7 +26,7 @@
     </div>
     <div class="row">
       <div class="col-sm-6 portfolio-item" *ngFor="let category of categories">
-        <a href="/category/{{category.id}}" class="portfolio-link">
+        <a [routerLink]="['/category']" [queryParams]="{id: category.id}"  class="portfolio-link">
           <div class="caption">
             <div class="caption-content">
               <h3>{{category.name}}</h3>

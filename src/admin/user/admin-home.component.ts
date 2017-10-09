@@ -1,4 +1,5 @@
-import { ActivatedRoute } from '@angular/router';
+import { ConstantUtil } from './../../util/const.util';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './../../service/user.service';
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -12,7 +13,12 @@ export class AdminHomeComponent {
     userForm: FormGroup;
     private user: any;
 
-    constructor(private fb: FormBuilder, private userService: UserService, private route: ActivatedRoute) { }
+    constructor(private fb: FormBuilder, private userService: UserService, private route: ActivatedRoute, private router: Router) {
+        if(!localStorage.getItem(ConstantUtil.TOKEN_IS_LOGN)) 
+        {
+            this.router.navigateByUrl("/login");
+        }
+     }
 
     ngOnInit() {
         this.route.queryParams.subscribe(res => {
