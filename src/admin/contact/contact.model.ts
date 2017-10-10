@@ -7,6 +7,9 @@ export class ContactModel{
     phone1: string;
     phone2: string;
     email: string;
+    facebook: string;
+    youtube: string;
+    googleplus: string;
 
     constructor(data){
         this.id = data.id;
@@ -17,5 +20,8 @@ export class ContactModel{
         this.phone1 = data.phone1;
         this.phone2 = data.phone2;
         this.email = data.email;
+        this.facebook = data.facebook;
+        this.youtube = data.youtube;
+        this.googleplus = data.googleplus;
     }
 }

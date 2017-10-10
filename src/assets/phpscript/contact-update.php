@@ -19,10 +19,14 @@ $slogan = $_POST['slogan'];
 $phone1 = $_POST['phone1'];
 $phone2 = $_POST['phone2'];
 $email = $_POST['email'];
+$facebook = $_POST['facebook'];
+$youtube = $_POST['youtube'];
+$googleplus = $_POST['googleplus'];
 $sql = "UPDATE CONTACT SET title1 = '$title1', 
 introduction1 = '$introduction1', introduction2= '$introduction2',
 slogan = '$slogan', phone1 = '$phone1',
-phone2 = '$phone2', email = '$email' WHERE id = '$id'";
+phone2 = '$phone2', email = '$email',
+facebook = '$facebook', youtube= '$youtube', googleplus='$googleplus' WHERE id = '$id'";
 
 $response = array();
 if ($conn->query($sql) === TRUE) {

@@ -4,16 +4,22 @@
 <div id="make-3D-space">
     <div id="product-card">
         <div id="product-front">
-            <img class="img-responsive" src="assets/images/product/{{product.parent_image}}" alt="" />
+            <img class="img-responsive" style="cursor: pointer" (click)="showProductInfor()" src="assets/images/product/{{product.parent_image}}"
+                alt="" />
             <div class="stats">
                 <div class="stats-container">
                     <div>
-                            <span class="product_price">{{product.price}}</span>
-                            <span class="product_name">{{product.name}}</span>
+                        <span class="product_price">{{product.price}}</span>
+                        <span class="product_name">{{product.name}} - {{product.product_id}}</span>
                     </div>
-                    <div>
-                            <span class="product_detail" style="cursor:pointer" (click)="showProductInfor()">Chi tiết</span>
-                            <span class="product-description">{{product.description}}</span>
+                    <div class="row">
+                        <span class="product-description col-sm-8">{{product.description}}</span>
+                        <div class="col-sm-4">
+                            <div class="product_detail" style="cursor:pointer" (click)="showProductInfor()">Chi tiết</div>
+                            <div class="product_detail" style="cursor:pointer">
+                                <a target="_blank" href="{{product.video_url}}" *ngIf="product.video_url">Video</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

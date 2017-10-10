@@ -9,6 +9,7 @@
     <p-column field="children_image" [style]="{'width': '225px'}" header="Children images" [sortable]="true"></p-column>
     <p-column field="price" header="Price" [sortable]="true" ></p-column>
     <p-column field="priority" header="Priority" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-column field="video_url" header="Video" [style]="{'width': '150px'}" [sortable]="true"></p-column>
     <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button"  style="float:left" (click)="showDialogToAdd()" label="Add">Add</button></div></p-footer>
 </p-dataTable>
 
@@ -53,6 +54,10 @@
         <div class="ui-grid-row">
             <div class="ui-grid-col-4"><label for="priority">Priority</label></div>
             <div class="ui-grid-col-8"><input pInputText id="priority" [(ngModel)]="product.priority" /></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="priority">Video</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="video_url" [(ngModel)]="product.video_url" /></div>
         </div>
     </div>
     <p-footer>

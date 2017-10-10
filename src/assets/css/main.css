@@ -104,9 +104,9 @@ ul li {
 	width: 100%;
 	z-index: 100;
 }
-#header .header-content {
+#header .header-content  {
 	margin: 0 auto;
-	padding: 40px 10% !important;
+	padding: 35px 5% !important;
 	width: 100%;
 	-moz-transition: padding 0.3s;
 	-o-transition: padding 0.3s;
@@ -138,11 +138,11 @@ ul li {
 	float: right;
 }
 .navigation li {
-	display: inline-grid;
+	display: inline-table;
 }
 .navigation, .navigation a {
 	color: rgba(0, 0, 0, 1);
-	font-size: 16px;
+	font-size: 14px;
 	margin-left: 40px;
 	letter-spacing: -1px;
 }
@@ -302,6 +302,7 @@ ul li {
 }
 .hero p {
 	padding-top: 20px;
+	text-align: justify;
 }
 /* ------------------------------------------------------------------------------
 	 Portfolio
@@ -410,6 +411,13 @@ ul li {
 	font-size: 11px;
 	margin: 0 2px;
 }
+
+.footer .logo {
+	height: 50px;
+	width: 50px;
+	margin-right: 5px;
+}
+
 /* ------------------------------------------------------------------------------
 	 Work Details
 -------------------------------------------------------------------------------*/

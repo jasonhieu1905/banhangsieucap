@@ -13,7 +13,7 @@ body {
     height:400px;
     transform-style: preserve-3d;
 	transition: transform 5s;
-	left: 10%;
+	left: 2%; 
 }
 #product-front, #product-back{
 	width:100%;
@@ -44,7 +44,6 @@ body {
 	height:100%;
 	position:absolute;
 	top:10px;
-	left:10px;
 	overflow:hidden;
     transform-style: preserve-3d;
 	-webkit-transition:  100ms ease-out;
@@ -97,7 +96,7 @@ div#product-card.flip180{
 	left:0;
 	width: 310px;
 	height:300px;
-	padding:27px 15px 35px;
+	padding:10px 6px 35px;
 	-webkit-transition: all 200ms ease-out;
        -moz-transition: all 200ms ease-out;
          -o-transition: all 200ms ease-out;
@@ -111,7 +110,7 @@ div#product-card.flip180{
             transition: all 200ms ease-out;
 }
 .stats-container .product_name{
-	font-size:22px;
+	font-size:18px;
 	color:#393c45;
 }
 .stats-container .product-description{
@@ -121,12 +120,12 @@ div#product-card.flip180{
 .stats-container .product_price{
 	float:right;
 	color:#48cfad;
-	font-size:22px;
+	font-size:18px;
 	font-weight:600;
 }
 
 .stats-container .product_detail{
-	float:right;
+	text-align: right;
 	color:#48cfad;
 	font-size:18px;
 	font-weight:600;

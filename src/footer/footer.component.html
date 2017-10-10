@@ -1,17 +1,20 @@
 <footer class="footer">
     <div class="container">
-      <div class="col-md-4 left">
+      <div class="col-md-6 left">
         <h4>{{contact.slogan}}</h4>
-        <p> Call: {{contact.phone1}} OR {{contact.phone2}} Email : <a href="mailto:{{contact.email}}"> {{contact.email}} </a></p>
+        <span>
+          <a href="{{contact.facebook}}" target="_blank">
+              <img class="logo"  src="assets/images/facebook.png" />
+          </a>
+          <a href="{{contact.youtube}}" target="_blank">
+              <img class="logo" src="assets/images/youtube.jpeg" />
+          </a>
+          <a href="{{contact.googleplus}}" target="_blank">
+              <img class="logo" src="assets/images/ggplus.png" />
+          </a>
+        </span>
       </div>
-
-      <div class="col-md-4 service text-center">
-        <span class="icon icon-browser"></span>
-        <span class="icon icon-trophy"></span>
-        <span class="icon icon-megaphone"></span>
-      </div>
-
-      <div class="col-md-4 right">
+      <div class="col-md-6 right">
         <p>{{contact.introduction2}}</p>
       </div>
     </div>

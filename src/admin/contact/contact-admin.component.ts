@@ -29,7 +29,10 @@ export class ContactAdminComponent {
                 slogan: [this.contact.slogan, Validators.required],
                 phone1: [this.contact.phone1, Validators.required],
                 phone2: [this.contact.phone2, Validators.required],
-                email: [this.contact.email, Validators.required]
+                email: [this.contact.email, Validators.required],
+                facebook: [this.contact.facebook, Validators.required],
+                youtube: [this.contact.youtube, Validators.required],
+                googleplus: [this.contact.googleplus, Validators.required]
             });
         }, err => {
             console.log('error when getting contact ' + err);
