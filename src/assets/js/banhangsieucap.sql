@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th9 26, 2017 lúc 06:53 PM
+-- Thời gian đã tạo: Th10 10, 2017 lúc 07:09 PM
 -- Phiên bản máy phục vụ: 10.1.25-MariaDB
 -- Phiên bản PHP: 5.6.31
 
@@ -80,16 +80,19 @@ CREATE TABLE `contact` (
   `phone1` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `phone2` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `slogan` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `slogan` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `facebook` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `youtube` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `googleplus` varchar(200) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `contact`
 --
 
-INSERT INTO `contact` (`id`, `title1`, `introduction1`, `introduction2`, `phone1`, `phone2`, `email`, `slogan`) VALUES
-(1, 'Title1', 'introduction 1', 'AD Company, Limited is a world-class producer of advanced measuring, monitoring, controlling and testing instruments', '0938190592', '01203672707', 'hieu@gmail.com', 'You live only once'),
-(2, 'title2', 'intro1\r\n', 'intro2', 'phone 1', 'phone 2 ', 'test', 'This is our life');
+INSERT INTO `contact` (`id`, `title1`, `introduction1`, `introduction2`, `phone1`, `phone2`, `email`, `slogan`, `facebook`, `youtube`, `googleplus`) VALUES
+(1, 'Title1', 'Báº¥t ká»ƒ viá»‡c cÃ¡c lÃ£nh Ä‘áº¡o Catalonia Ä‘Ã£ tá»• chá»©c má»™t cuá»™c trÆ°ng cáº§u dÃ¢n Ã½ bá»‹ xem lÃ  vi hiáº¿n, pháº£n á»©ng tá»« Thá»§ tÆ°á»›ng TÃ¢y Ban Nha Mariano Rajoy má»›i lÃ  Ä‘iá»u Ä‘áº©y Ä‘áº¥t nÆ°á»›c vÃ o cuá»™c khá»§ng hoáº£ng hiáº¿n phÃ¡p nghiÃªm trá»ng nháº¥t ká»ƒ tá»« cuá»™c Ä‘áº£o chÃ­nh báº¥t thÃ nh nÄƒm 1981, Economist nháº­n Ä‘á»‹nh.', 'AD Company, Limited is a world-class producer of advanced measuring, monitoring, controlling and testing instruments', '0938190592', '01203672707', 'hieu@gmail.com', 'You live only once', 'http://facebook.com', 'http://google.com', 'http://googleplus.com'),
+(2, 'title2', 'intro1\r\n', 'intro2', 'phone 1', 'phone 2 ', 'test', 'This is our life', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -99,6 +102,7 @@ INSERT INTO `contact` (`id`, `title1`, `introduction1`, `introduction2`, `phone1
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
+  `product_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -106,20 +110,22 @@ CREATE TABLE `product` (
   `parent_image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `children_image` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `price` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `priority` int(11) NOT NULL
+  `priority` int(11) NOT NULL,
+  `video_url` varchar(200) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id`, `category_id`, `name`, `description`, `size`, `parent_image`, `children_image`, `price`, `priority`) VALUES
-(1, 1, 'product1', 'description for product 1 description for product 1 description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
-(2, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
-(3, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
-(4, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg', '100,000VND', 1),
-(5, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1),
-(6, 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1);
+INSERT INTO `product` (`id`, `product_id`, `category_id`, `name`, `description`, `size`, `parent_image`, `children_image`, `price`, `priority`, `video_url`) VALUES
+(1, '11', 1, 'product1', 'description for product 1 description for product 1 description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1, 'http://youtube.com'),
+(2, '22', 2, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1, 'http://google.com'),
+(3, '33', 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1, ''),
+(4, '44', 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg', '100,000VND', 1, ''),
+(5, '55', 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1, ''),
+(6, '66', 1, 'product1', 'description for product 1', '40,41,42', 'image.jpg', 'image1.jpg,image2.jpg,image3.jpg', '100,000VND', 1, ''),
+(7, 'test', 7, '', '', '', '', '', '', 0, '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -162,12 +168,12 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
