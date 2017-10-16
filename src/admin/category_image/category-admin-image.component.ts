@@ -14,9 +14,6 @@ export class CategoryAdminImageComponent {
     public files;
     public url = ConstantUtil.URL + 'upload-category.php';
     constructor(private categoryService: CategoryService) {
-        this.categoryService.getAllCategories().subscribe(res => {
-            this.categories = res.json();
-        });
         this.categoryService.getAllCategoriesImage().subscribe(res => {
             this.files = res.json();
         })

@@ -9,8 +9,8 @@ body {
 #make-3D-space{
     position: relative;
     perspective: 800px;
-    width:300px;
-    height:400px;
+    width:340px;
+    height:350px;
     transform-style: preserve-3d;
 	transition: transform 5s;
 	left: 2%; 
@@ -94,7 +94,7 @@ div#product-card.flip180{
 	background:#fff;
 	position:absolute;
 	left:0;
-	width: 310px;
+	width: 340px;
 	height:300px;
 	padding:10px 6px 35px;
 	-webkit-transition: all 200ms ease-out;

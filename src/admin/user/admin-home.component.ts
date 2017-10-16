@@ -21,9 +21,10 @@ export class AdminHomeComponent {
      }
 
     ngOnInit() {
-        this.route.queryParams.subscribe(res => {
+        this.route.queryParams.subscribe(params => {
+            let username = params['username'];
             this.userForm = this.fb.group({
-                username: [res.username, Validators.required],
+                username: [username, Validators.required],
                 newPassword: ['', Validators.required],
                 retypeNewPassword: ['', [Validators.required]]
             });
@@ -43,5 +44,10 @@ export class AdminHomeComponent {
         } else {
             form.get('retypeNewPassword').setErrors( {MatchPassword: true} )
         }
+    }
+
+    logout() {
+        localStorage.clear();
+        this.router.navigateByUrl("/login");
     }
 }

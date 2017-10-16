@@ -2,7 +2,7 @@
 include 'mysql.php';
 header('Access-Control-Allow-Origin: *');
     // Open a directory, and read its contents
-$dir = '../images/category';    
+$dir = '../images/product';    
 $emparray = array();
 if (is_dir($dir)){
     if ($dh = opendir($dir)){

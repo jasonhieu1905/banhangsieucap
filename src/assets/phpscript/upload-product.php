@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
                 $shortname = $_FILES['upload']['name'][$i];
 
                 //save the url and the file
-                $filePath = '../images/category/' . $_FILES['upload']['name'][$i];
+                $filePath = '../images/product/' . $_FILES['upload']['name'][$i];
 
                 //Upload the file into the temp dir
                 if(move_uploaded_file($tmpFilePath, $filePath)) {
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     }
 
     //show success message
-    echo $previous_page;   
+    echo $previous_page;    
     if(is_array($files)){
         echo "<ul>";
         foreach($files as $file){

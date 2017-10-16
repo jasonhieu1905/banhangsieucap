@@ -1,3 +1,4 @@
+import { ConstantUtil } from './../../util/const.util';
 import { ProductService } from './../../service/product.service';
 import { RequestUtil } from './../../util/request.util';
 import { Component } from '@angular/core';
@@ -8,16 +9,14 @@ import $ from 'jquery';
     styleUrls: ['./product-admin-image.component.scss']
 })
 export class ProductAdminImageComponent {
-    public products: any;
-    public images = [];
+    public product: any;
+    public files;
+    public url = ConstantUtil.URL + 'upload-product.php';
     constructor(private productService: ProductService) {
-        this.productService.getAllProduct().subscribe(res => {
-            this.products = res.json();
-            for(let product of this.products) {
-                let arrImage = product.children_image.split(',');
-                Array.prototype.push.apply(this.images,arrImage);
-            }
-        });
+   
+        this.productService.getAllProductImages().subscribe(res => {
+            this.files = res.json();
+        })
     }
 
 }

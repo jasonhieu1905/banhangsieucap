@@ -28,7 +28,7 @@ export class LoginComponent {
       }
       let user = {username: this.username};
       localStorage.setItem(ConstantUtil.TOKEN_IS_LOGN,'true');
-      this.router.navigate(['admin/home'],  { queryParams: user});
+      this.router.navigate(['admin'],  { queryParams: user});
     }, err => {
       this.errorMessage = 'Username or password is incorrect';
       console.log('error while doing login');
