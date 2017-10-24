@@ -1,14 +1,19 @@
-<form action="{{url}}"  enctype="multipart/form-data" method="post">
+<div class="row">
+    <form class="col col-xs-6" action="{{url}}"  enctype="multipart/form-data" method="post">
+        <div>
+            <label for='upload'>Add Attachments:</label>
+            <input id='upload' name="upload[]" type="file" multiple="multiple" />
+        </div>
+    
+        <p><input type="submit" name="submit" value="Submit"></p>
+    
+    </form>
+    <button class="col col-xs-6" (click)="removeCategoryImage()">Delete</button>
+</div>
 
-    <div>
-        <label for='upload'>Add Attachments:</label>
-        <input id='upload' name="upload[]" type="file" multiple="multiple" />
-    </div>
 
-    <p><input type="submit" name="submit" value="Submit"></p>
-
-</form>
 <div class="col-sm-4 portfolio-item" *ngFor="let file of files">
     <span class="image-color">{{file}}</span>
     <img class="category-image" src="assets/images/category/{{file}}" />
+    <input type="checkbox" class="cbx-category-image" [attr.data-file]="file" />
 </div>

@@ -14,9 +14,25 @@ export class CategoryAdminImageComponent {
     public files;
     public url = ConstantUtil.URL + 'upload-category.php';
     constructor(private categoryService: CategoryService) {
+        this.getAllImage();
+    }
+
+    public getAllImage() {
         this.categoryService.getAllCategoriesImage().subscribe(res => {
             this.files = res.json();
         })
+    }
+
+    public removeCategoryImage() {
+        let arr = $('.cbx-category-image:checkbox:checked');
+        let allFile = [];
+        for(let item of arr) {
+            allFile.push(item.getAttribute('data-file'));
+        }
+        this.categoryService.removeCategoryImage(allFile.toString()).subscribe(res => {
+            alert('Delete File ok');
+            this.getAllImage();
+        });
     }
 
 }

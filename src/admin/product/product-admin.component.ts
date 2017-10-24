@@ -51,7 +51,7 @@ export class ProductAdminComponent {
         let params = RequestUtil.getUrlSearchParam(this.selectedProduct);
         this.productService.deleteProduct(params.toString()).subscribe(res => {
             if (res.json().status == 'error') {
-                console.log('error while deleting category');
+                console.log('error while deleting category'+ res.json());
             }
         });
 
@@ -64,7 +64,7 @@ export class ProductAdminComponent {
             let params = RequestUtil.getUrlSearchParam(this.product);
             this.productService.addNewProduct(params.toString()).subscribe(res => {
                 if (res.json().status == 'error') {
-                    alert('error while adding category');
+                    alert('error while adding category'+ res.json());
                 }
             });
         }
@@ -73,7 +73,7 @@ export class ProductAdminComponent {
             let params = RequestUtil.getUrlSearchParam(this.product);
             this.productService.updateProduct(params.toString()).subscribe(res => {
                 if (res.json().status == 'error') {
-                    alert('error while updating category');
+                    alert('error while updating category'+ res.json());
                 }
             });
         }

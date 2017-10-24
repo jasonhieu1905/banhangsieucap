@@ -50,6 +50,7 @@ export class ContactAdminComponent {
             if(res.json().status == 'success') {
                 alert('Update success');
             } else {
+                alert('Update error' + res);
                 this.errorMessage = 'Can not update';
             }
             console.log(res);

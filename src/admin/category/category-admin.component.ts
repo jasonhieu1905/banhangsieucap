@@ -52,7 +52,7 @@ export class CategoryAdminComponent {
         let params = RequestUtil.getUrlSearchParam(this.selectedCategory);
         this.categoryService.deleteCategory(params.toString()).subscribe(res => {
             if (res.json().status == 'error') {
-                console.log('error while deleting category');
+                alert('error while deleting category' +res.json());
             }
         });
 
@@ -65,7 +65,7 @@ export class CategoryAdminComponent {
             let params = RequestUtil.getUrlSearchParam(this.category);
             this.categoryService.addNewCategory(params.toString()).subscribe(res => {
                 if (res.json().status == 'error') {
-                    alert('error while adding category');
+                    alert('error while adding category'+ res.json());
                 }
             });
         }
@@ -74,7 +74,7 @@ export class CategoryAdminComponent {
             let params = RequestUtil.getUrlSearchParam(this.category);
             this.categoryService.updateCategory(params.toString()).subscribe(res => {
                 if (res.json().status == 'error') {
-                    alert('error while updating category');
+                    alert('error while updating category'+ res.json());
                 }
             });
         }

@@ -14,9 +14,25 @@ export class ProductAdminImageComponent {
     public url = ConstantUtil.URL + 'upload-product.php';
     constructor(private productService: ProductService) {
    
+        this.getAllProductImage();
+    }
+
+    public getAllProductImage() {
         this.productService.getAllProductImages().subscribe(res => {
             this.files = res.json();
         })
+    }
+
+    public removeProductImage() {
+        let arr = $('.cbx-product-image:checkbox:checked');
+        let allFile = [];
+        for(let item of arr) {
+            allFile.push(item.getAttribute('data-file'));
+        }
+        this.productService.removeCategoryImage(allFile.toString()).subscribe(res => {
+            alert('Delete File ok');
+            this.getAllProductImage();
+        });
     }
 
 }

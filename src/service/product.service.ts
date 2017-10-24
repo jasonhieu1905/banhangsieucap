@@ -13,6 +13,7 @@ export class ProductService{
     private url_add_product = 'product-add.php';
     private url_delete_product = 'product-delete.php';
     private url_image = "product-get-images.php";
+    private url_detele_image = "product-delete-image.php";
     
     public  getProductByCategoryId(id) {
         let url = ConstantUtil.URL + this.url_get_by_product_id + id;
@@ -42,5 +43,10 @@ export class ProductService{
     public deleteProduct(body) {
         let url = ConstantUtil.URL + this.url_delete_product;
         return this.baseService.post(url, body);
+    }
+
+    public removeCategoryImage(images) {
+        let url = ConstantUtil.URL + this.url_detele_image + "?images=" + images;
+        return this.baseService.get(url);
     }
 }
