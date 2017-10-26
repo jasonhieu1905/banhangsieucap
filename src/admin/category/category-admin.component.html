@@ -8,6 +8,7 @@
     <p-column field="name" header="Name" [sortable]="true"></p-column>
     <p-column field="description" header="Description" [sortable]="true"></p-column>
     <p-column field="image" header="Image" [sortable]="true"></p-column>
+    <p-column field="priority_id" header="Priority" [sortable]="true"></p-column>
     <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button"  style="float:left" (click)="showDialogToAdd()" label="Add">Add</button></div></p-footer>
 </p-dataTable>
 
@@ -29,6 +30,10 @@
             <div class="ui-grid-col-4"><label for="color">Image</label></div>
             <div class="ui-grid-col-8"><input pInputText id="image" [(ngModel)]="category.image" /></div>
         </div>
+        <div class="ui-grid-row">
+                <div class="ui-grid-col-4"><label for="color">Priority</label></div>
+                <div class="ui-grid-col-8"><input pInputText id="image" [(ngModel)]="category.priority_id" /></div>
+            </div>
     </div>
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">

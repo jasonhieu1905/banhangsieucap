@@ -20,9 +20,10 @@ $parent_image = $_POST['parent_image'];
 $children_image = $_POST['children_image'];
 $price = $_POST['price'];
 $priority = $_POST['priority'];
+$video_url = $_POST['video_url'];
 
-$sql = "INSERT INTO PRODUCT (product_id, category_id, name,description, size, parent_image, children_image, price, priority)
-VALUES ('$product_id', '$category_id', '$name', '$description', '$size', '$parent_image', '$children_image', '$price', '$priority' )";
+$sql = "INSERT INTO PRODUCT (product_id, category_id, name,description, size, parent_image, children_image, price, priority, video_url)
+VALUES ('$product_id', '$category_id', '$name', '$description', '$size', '$parent_image', '$children_image', '$price', '$priority', '$video_url' )";
 
 $response = array();
 if ($conn->query($sql) === TRUE) {

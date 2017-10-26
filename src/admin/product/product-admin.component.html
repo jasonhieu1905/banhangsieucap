@@ -1,6 +1,6 @@
 <p-dataTable [value]="data" [(selection)]="selectedProduct"  selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
     <p-column field="id" header="Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
-    <p-column field="product_id" header="Product Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
+    <p-column field="product_id" header="Product Id" [style]="{'width': '100px'}" [sortable]="true"></p-column>
     <p-column field="category_id" header="Category Id" [style]="{'width': '50px'}" [sortable]="true"></p-column>
     <p-column field="name" header="Name" [sortable]="true"></p-column>
     <p-column field="description" header="Description" [sortable]="true"></p-column>
@@ -64,6 +64,7 @@
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
             <button type="button"  (click)="delete()" label="Delete">Delete</button>
             <button type="button"  (click)="save()" label="Save">Save</button>
+            <button type="button"  (click)="copy()" *ngIf="selectedProduct" label="Save">Copy</button>
         </div>
     </p-footer>
 </p-dialog>

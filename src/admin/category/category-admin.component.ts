@@ -82,7 +82,7 @@ export class CategoryAdminComponent {
         this.category = null;
         this.displayDialog = false;
     }
-    
+
     findSelectedCarIndex(): number {
         return this.data.indexOf(this.selectedCategory);
     }
@@ -90,5 +90,5 @@ export class CategoryAdminComponent {
 }
 
 class Category{
-    constructor(public id?, public name?, public description?, public image?) {}
+    constructor(public id?, public name?, public description?, public image?, public priority_id?) {}
 }

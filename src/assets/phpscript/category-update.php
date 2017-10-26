@@ -15,9 +15,10 @@ $id = $_POST['id'];
 $name = $_POST['name'];
 $description = $_POST['description'];
 $image = $_POST['image'];
+$priority_id = $_POST['priority_id'];
 
-$sql = "UPDATE CATEGORY SET name = '$name', 
-description = '$description', image= '$image' 
+$sql = "UPDATE CATEGORY SET name = '$name',
+description = '$description', image= '$image', priority_id= '$priority_id'
 WHERE id = '$id'";
 
 $response = array();

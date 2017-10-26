@@ -19,6 +19,7 @@ export class ProductAdminComponent {
 
     getAllProduct() {
         this.productService.getAllProduct().subscribe(res => {
+            debugger;
             this.data = res.json();
         });
     }
@@ -74,9 +75,24 @@ export class ProductAdminComponent {
             this.productService.updateProduct(params.toString()).subscribe(res => {
                 if (res.json().status == 'error') {
                     alert('error while updating category'+ res.json());
+                    return ;
                 }
             });
         }
+        this.product = null;
+        this.displayDialog = false;
+    }
+
+    copy() {
+        let data = [...this.data];
+        data[this.findSelectedProductIndex()] = this.product;
+        let params = RequestUtil.getUrlSearchParam(this.product);
+        this.productService.addNewProduct(params.toString()).subscribe(res => {
+            if (res.json().status == 'error') {
+                alert('error while adding category'+ res.json());
+            }
+            this.getAllProduct();
+        });
         this.data = data;
         this.product = null;
         this.displayDialog = false;
