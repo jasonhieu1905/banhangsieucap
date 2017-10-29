@@ -16,6 +16,10 @@ export class ProductComponent {
 
   public productByCategory = [];
 
+  public categoryDetail = {};
+
+  public IMAGE_META_DATA = ConstantUtil.FULL_IMAGE_META_DATA;
+
   constructor(private contactService: ContactService,
     private categoryService: CategoryService,
     private productService: ProductService,
@@ -33,6 +37,12 @@ export class ProductComponent {
 
     this.route.queryParams.subscribe(params=> {
       let id = +params['id'];
+      this.categoryService.getCategoryById(id).subscribe(res => {
+        if(res) {
+          this.categoryDetail = res.json()[0];
+          this.IMAGE_META_DATA += this.categoryDetail['image'];
+        }
+      })
       this.productService.getProductByCategoryId(id).subscribe(res => {
         this.productByCategory = res.json();
       }, error => {

@@ -13,6 +13,7 @@ export class CategoryService{
     private url_delete = 'category-delete.php';
     private url_image = "category-get-images.php";
     private url_detele_image = "category-delete-image.php";
+    private url_category_detail = "category-getById.php";
 
     public getAllCategoriesImage() {
         let url = ConstantUtil.URL + this.url_image;
@@ -41,6 +42,11 @@ export class CategoryService{
 
     public removeCategoryImage(images) {
         let url = ConstantUtil.URL + this.url_detele_image + "?images=" + images;
+        return this.baseService.get(url);
+    }
+
+    public getCategoryById(categoryId) {
+        let url = ConstantUtil.URL + this.url_category_detail + "?id=" + categoryId;
         return this.baseService.get(url);
     }
 }

@@ -1,6 +1,10 @@
+import { element } from 'protractor';
+import { ConstantUtil } from './../../util/const.util';
 import { ProductService } from './../../service/product.service';
 import { RequestUtil } from './../../util/request.util';
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
+
 @Component({
     selector: 'product-admin',
     templateUrl: './product-admin.component.html',
@@ -13,13 +17,14 @@ export class ProductAdminComponent {
     public product:any;
     public displayDialog: boolean;
 
+    public url = ConstantUtil.URL + 'upload-product-image.php';
+
     constructor(private productService: ProductService) {
         this.getAllProduct();
     }
 
     getAllProduct() {
         this.productService.getAllProduct().subscribe(res => {
-            debugger;
             this.data = res.json();
         });
     }
@@ -67,6 +72,8 @@ export class ProductAdminComponent {
                 if (res.json().status == 'error') {
                     alert('error while adding category'+ res.json());
                 }
+                this.getAllProduct();
+                return ;
             });
         }
         else{
@@ -79,6 +86,7 @@ export class ProductAdminComponent {
                 }
             });
         }
+        this.data = data;
         this.product = null;
         this.displayDialog = false;
     }
@@ -93,13 +101,59 @@ export class ProductAdminComponent {
             }
             this.getAllProduct();
         });
-        this.data = data;
         this.product = null;
         this.displayDialog = false;
     }
 
     findSelectedProductIndex(): number {
         return this.data.indexOf(this.selectedProduct);
+    }
+
+    public submitFileParentImage(form) {
+        let formData = new FormData(form);
+        let files = form.elements[0].files;
+        let fileName = files[0].name;
+      
+        let t = this;
+        $.ajax({
+            url: this.url,
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {
+                debugger;
+                t.product.parent_image = fileName;
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    }
+
+    public submitFileChildrenImage(form) {
+        let formData = new FormData(form);
+        let files = form.elements[0].files;
+        let filesImage = [];
+        if(files) {
+            for (let file of files) {
+                filesImage.push(file.name);
+            }
+        }
+        
+        let t = this;
+        $.ajax({
+            url: this.url,
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data) {
+                debugger;
+                t.product.children_image = filesImage.toString();
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     }
 }
 

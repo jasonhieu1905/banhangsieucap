@@ -65,6 +65,16 @@
             <button type="button"  (click)="delete()" label="Delete">Delete</button>
             <button type="button"  (click)="save()" label="Save">Save</button>
             <button type="button"  (click)="copy()" *ngIf="selectedProduct" label="Save">Copy</button>
+            <form  method="post" class="upload-image" #formParent enctype="multipart/form-data">
+                <label for="filesParent" >Main Image</label>
+                <input id="filesParent" style="visibility:hidden;" type="file" (change)="submitFileParentImage(formParent)"  name="upload[]" multiple="multiple"/>
+            </form>
+            <form  method="post"  class="upload-image" #formChildren enctype="multipart/form-data">
+                <label  for="filesChildren" >Children Image</label>
+                <input id="filesChildren" style="visibility:hidden;" type="file" (change)="submitFileChildrenImage(formChildren)"  name="upload[]" multiple="multiple"/>
+            </form>
         </div>
+            
     </p-footer>
 </p-dialog>
+

@@ -15,6 +15,8 @@ export class HomeComponent {
 
   public categories = [];
 
+  public image_metadata_url = "http://bideptrai.com/assets/images/meta_home.jpeg";
+
   constructor(private contactService: ContactService, private categoryService: CategoryService){}
   
   ngOnInit() {
