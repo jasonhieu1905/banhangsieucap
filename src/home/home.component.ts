@@ -2,6 +2,7 @@ import { CategoryService } from './../service/category.service';
 import { ConstantUtil } from './../util/const.util';
 import { ContactService } from './../service/contact.service';
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'home',
@@ -18,14 +19,22 @@ export class HomeComponent {
   public image_metadata_url = "http://bideptrai.com/assets/images/meta_home.jpeg";
 
   constructor(private contactService: ContactService, private categoryService: CategoryService){}
-  
+
   ngOnInit() {
+      // $('meta[name=url]').remove();
+      // $('meta[name=title]').remove();
+      // $('meta[name=description]').remove();
+      // $('meta[name=image]').remove();
+      // $('head').append('<meta name="url" property="og:url" content="http://bideptrai.com/home">');
+      // $('head').append('<meta name="title" property="og:title" content="B store - chuyên order tại xưởng">');
+      // $('head').append('<meta name="description" property="og:description" content="B store - chuyên order tại xưởng">');
+      // $('head').append('<meta name="image" property="og:image" content="' + this.image_metadata_url + '">');
       this.contactService.getAllContact().subscribe(res => {
         this.contact =  <Contact>(res.json()[0]);
       },error => {
         console.log('error when getting contact');
       });
-      
+
       this.categoryService.getAllCategories().subscribe(res => {
         this.categories = res.json();
       },error => {
@@ -44,4 +53,4 @@ class Contact {
   public email: string;
   public slogan: string;
 }
- 
+
