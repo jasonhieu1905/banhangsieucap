@@ -21,14 +21,18 @@ export class HomeComponent {
   constructor(private contactService: ContactService, private categoryService: CategoryService){}
 
   ngOnInit() {
-      // $('meta[name=url]').remove();
-      // $('meta[name=title]').remove();
-      // $('meta[name=description]').remove();
-      // $('meta[name=image]').remove();
-      // $('head').append('<meta name="url" property="og:url" content="http://bideptrai.com/home">');
-      // $('head').append('<meta name="title" property="og:title" content="B store - chuyên order tại xưởng">');
-      // $('head').append('<meta name="description" property="og:description" content="B store - chuyên order tại xưởng">');
-      // $('head').append('<meta name="image" property="og:image" content="' + this.image_metadata_url + '">');
+      $('meta[name=url]').remove();
+      $('meta[name=title]').remove();
+      $('meta[name=description]').remove();
+      $('meta[name=image]').remove();
+      $('meta[name=image_width]').remove();
+      $('meta[name=image_height]').remove();
+      $('head').append('<meta name="url" property="og:url" content="http://bideptrai.com/home">');
+      $('head').append('<meta name="title" property="og:title" content="B store - chuyên order tại xưởng">');
+      $('head').append('<meta name="description" property="og:description" content="B store - chuyên order tại xưởng">');
+      $('head').append('<meta name="image" property="og:image" content="' + this.image_metadata_url + '">');
+      $('head').append('<meta name="image_width" property="og:image:width" content="300">');
+      $('head').append('<meta name="image_height" property="og:image:height" content="200">');
       this.contactService.getAllContact().subscribe(res => {
         this.contact =  <Contact>(res.json()[0]);
       },error => {

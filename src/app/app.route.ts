@@ -22,7 +22,7 @@ export const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'category',
+    path: 'category/:id',
     component: ProductComponent 
    
   },
