@@ -14,3 +14,27 @@
 	margin-top: 9px;
     margin-right: 5px;
 }
+
+.ui-galleria-panel-wrapper {
+	.ui-galleria-panel {
+		.ui-panel-images{
+			height: 200px !important;
+			width: 300px !important;
+		}
+	}
+}
+
+.completa {
+	img{
+		width: 100%;
+	} 
+	.ui-galleria {
+		width: 100% !important;
+	}
+	.ui-panel-images{
+		width: 350px !important;
+		height: 250px !important;
+		/*z-index: -100;*/
+	}	
+}
+/* The Modal (background) */

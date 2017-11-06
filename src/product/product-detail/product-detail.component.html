@@ -10,11 +10,13 @@
                 <div class="stats-container">
                     <div>
                         <span class="product_price">{{product.price}}</span>
-                        <span class="product_name">{{product.name}} - {{product.product_id}}</span>
+                        <span class="product_name">{{product.name}}</span>
+                        
                     </div>
                     <div class="row">
                         <div class="col-xs-8">
-                                <span class="product-description ">{{product.description}}</span>
+                                <div>{{product.product_id}}</div>
+                                <div class="product-description">{{product.description}}</div>
                         </div>
                         <div class="col-xs-4">
                             <div class="product_detail" style="cursor:pointer" (click)="showProductInfor()">Chi tiết</div>

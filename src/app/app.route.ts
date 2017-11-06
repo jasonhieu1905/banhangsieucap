@@ -19,6 +19,7 @@ export const routes: Routes = [
   },
   {
     path: 'login',
+    // loadChildren: './../admin/login/login.module#LoginModule'
     component: LoginComponent
   },
   {
