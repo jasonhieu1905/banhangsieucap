@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="col-sm-4 portfolio-item" *ngFor="let file of files">
+<div class="col-xs-12 col-sm-4 portfolio-item" *ngFor="let file of files">
     <span class="image-color">{{file}}</span>
     <img class="category-image" src="assets/images/category/{{file}}" />
     <input type="checkbox" class="cbx-category-image" [attr.data-file]="file" />

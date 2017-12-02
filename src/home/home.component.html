@@ -5,10 +5,10 @@
 <section id="hero" class="section ">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-6 hero">
+      <div class="col-md-6 col-sm-6 col-xs-12 hero">
           <h2>{{contact.title1}}</h2>
       </div>
-      <div class="col-md-6 col-sm-6 hero">
+      <div class="col-md-6 col-sm-6 col-xs-12 hero">
           <p>{{contact.introduction1}}</p>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <div class="container">
     <hr />
     <div class="row">
-      <div class="col-sm-6 portfolio-item" *ngFor="let category of categories">
+      <div class="col-xs-12 col-sm-6 portfolio-item" *ngFor="let category of categories">
         <a [routerLink]="['/category', category.id]"  class="portfolio-link">
           <div class="caption">
             <div class="caption-content">

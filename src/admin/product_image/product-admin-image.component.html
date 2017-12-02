@@ -11,7 +11,7 @@
     <button class="col col-xs-6" (click)="removeProductImage()">Delete</button>
 </div>
 
-<div class="col-sm-4 portfolio-item" *ngFor="let file of files">
+<div class="col-xs-12 col-sm-4 portfolio-item" *ngFor="let file of files">
     <span class="image-color">{{file}}</span>
     <img class="product-image" src="assets/images/product/{{file}}" />
     <input type="checkbox" class="cbx-product-image" [attr.data-file]="file" />

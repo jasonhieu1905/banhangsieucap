@@ -20,8 +20,6 @@ body {
 	height:100%;
 	background:#fff;
 	position:absolute;
-	left:-5px;
-	top:-5px;
 	-webkit-transition: all 100ms ease-out;
        -moz-transition: all 100ms ease-out;
          -o-transition: all 100ms ease-out;
@@ -411,4 +409,8 @@ div.shadow{
 	-ms-transform: rotate(135deg);
 	-webkit-transform: rotate(135deg);
 	transform: rotate(135deg);
+}
+
+.image-detail {
+	width: 96%;
 }
