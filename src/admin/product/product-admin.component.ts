@@ -127,7 +127,7 @@ export class ProductAdminComponent {
             async: false,
             success: function (data) {
                 debugger;
-                t.product.parent_image = fileName;
+                t.product.parent_image = JSON.parse(data).join(', ');;
             },
             cache: false,
             contentType: false,
@@ -152,7 +152,7 @@ export class ProductAdminComponent {
             data: formData,
             async: false,
             success: function (data) {
-                t.product.children_image = filesImage.join(', ');
+                t.product.children_image = JSON.parse(data).join(', ');
             },
             cache: false,
             contentType: false,

@@ -8,9 +8,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-4 portfolio-item" *ngFor="let product of productByCategory" >
+      <div class="col-xs-12 col-sm-4 portfolio-item" *ngFor="let product of productLazyLoading; trackBy: trackByFn" >
         <product-detail [product]="product"></product-detail>
       </div>
+    </div>
+    <div class="row" style="padding-left: 50%">
+      <button class="show-more" (click)="getProductLazy()" *ngIf="!(counter >= productByCategory.length)">
+        Tải thêm
+      </button>
     </div>
   </div>
 </section>

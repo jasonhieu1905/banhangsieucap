@@ -17,7 +17,11 @@ export class ProductComponent  implements OnInit{
 
   public productByCategory = [];
 
+  public productLazyLoading = [];
+
   public categoryDetail = {};
+
+  public counter: number;
 
   public IMAGE_META_DATA = ConstantUtil.FULL_IMAGE_META_DATA;
 
@@ -40,6 +44,8 @@ export class ProductComponent  implements OnInit{
       // this.meta.setTag('og:image', 'http://bideptrai.com/assets/images/category/No6-01.jpg');
       // this.meta.setTag('og:image:width', '300');
       // this.meta.setTag('og:image:height', '200');
+
+      this.counter = 0;
   }
 
   ngOnInit() {
@@ -61,10 +67,25 @@ export class ProductComponent  implements OnInit{
       })
       this.productService.getProductByCategoryId(id).subscribe(res => {
         this.productByCategory = res.json();
+        this.getProductLazy();
       }, error => {
         console.log('error when getting product by category');
       });
     })
+  }
+
+  public getProductLazy() {
+    for(let i = this.counter; i<this.productByCategory.length;i++)
+    {
+      this.productLazyLoading.push(this.productByCategory[i]);
+      if(i!= 0 && (i+1)%6 == 0) break;
+    }
+    this.counter+=6;
+  }
+
+  public trackByFn(index, item) {
+    debugger;
+      return index; // or item.id
   }
 
   private loadMetaData() {
