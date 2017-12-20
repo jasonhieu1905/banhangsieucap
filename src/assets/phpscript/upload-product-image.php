@@ -15,14 +15,21 @@ header('Access-Control-Allow-Origin: *');
                 //save the url and the file
                 $filePath = '../images/product/' . $_FILES['upload']['name'][$i];
 
+                $FileCounter = 1; 
+                $FinalFilename = $_FILES['upload']['name'][$i];
+               // loop until an available filename is found 
+                while (file_exists( '../images/product/'. $FinalFilename)) {
+                    $FinalFilename = $FileCounter++.'_' . $_FILES['upload']['name'][$i]; 
+                }
                 //Upload the file into the temp dir
-                if(move_uploaded_file($tmpFilePath, $filePath)) {
+                if(move_uploaded_file($tmpFilePath, '../images/product/'.$FinalFilename)) {
 
-                    $files[] = $shortname;
+                    $files[] = $FinalFilename;
                     //insert into db 
                     //use $shortname for the filename
                 }
               }
         }
+        echo json_encode($files);
     }
 ?>
