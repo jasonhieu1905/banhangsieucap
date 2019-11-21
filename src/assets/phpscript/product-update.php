@@ -23,7 +23,7 @@ $price = $_POST['price'];
 $priority = $_POST['priority'];
 $video_url = $_POST['video_url'];
 
-$sql = "UPDATE PRODUCT SET product_id = '$product_id', 
+$sql = "UPDATE product SET product_id = '$product_id', 
 category_id = '$category_id', name= '$name' , description= '$description' , size= '$size' , 
 parent_image= '$parent_image', children_image= '$children_image', price= '$price', 
 priority= '$priority', video_url='$video_url' WHERE id = '$id'";

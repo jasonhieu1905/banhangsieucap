@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 $username = $_POST['username'];
 $password = $_POST['password']; 
-$sql = "UPDATE ACCOUNT SET PASSWORD = '$password' 
+$sql = "UPDATE account SET PASSWORD = '$password' 
  WHERE USERNAME = '$username'";
 
 $response = array();

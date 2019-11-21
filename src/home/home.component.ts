@@ -16,7 +16,7 @@ export class HomeComponent {
 
   public categories = [];
 
-  public image_metadata_url = "http://bideptrai.com/assets/images/meta_home.jpeg";
+  public image_metadata_url = "http://hienminhco.com/assets/images/meta_home.jpeg";
 
   constructor(private contactService: ContactService, private categoryService: CategoryService){}
 
@@ -27,7 +27,7 @@ export class HomeComponent {
       $('meta[name=image]').remove();
       $('meta[name=image_width]').remove();
       $('meta[name=image_height]').remove();
-      $('head').append('<meta name="url" property="og:url" content="http://bideptrai.com/home">');
+      $('head').append('<meta name="url" property="og:url" content="http://hienminhco.com/home">');
       $('head').append('<meta name="title" property="og:title" content="B store - chuyên order tại xưởng">');
       $('head').append('<meta name="description" property="og:description" content="B store - chuyên order tại xưởng">');
       $('head').append('<meta name="image" property="og:image" content="' + this.image_metadata_url + '">');

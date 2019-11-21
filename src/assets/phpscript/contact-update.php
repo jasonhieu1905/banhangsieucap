@@ -22,7 +22,7 @@ $email = $_POST['email'];
 $facebook = $_POST['facebook'];
 $youtube = $_POST['youtube'];
 $googleplus = $_POST['googleplus'];
-$sql = "UPDATE CONTACT SET title1 = '$title1', 
+$sql = "UPDATE contact SET title1 = '$title1', 
 introduction1 = '$introduction1', introduction2= '$introduction2',
 slogan = '$slogan', phone1 = '$phone1',
 phone2 = '$phone2', email = '$email',

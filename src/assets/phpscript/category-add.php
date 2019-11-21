@@ -17,7 +17,7 @@ $description = $_POST['description'];
 $image = $_POST['image'];
 $priority_id = $_POST['priority_id'];
 
-$sql = "INSERT INTO CATEGORY (name, description, image, priority_id)
+$sql = "INSERT INTO category (name, description, image, priority_id)
 VALUES ('$name', '$description', '$image', '$priority_id')";
 
 $response = array();

@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $id = $_GET["id"];
-$sql = "SELECT * FROM CATEGORY WHERE ID=" . $id;
+$sql = "SELECT * FROM category WHERE ID=" . $id;
 
 $result = $conn->query($sql);
 

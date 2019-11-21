@@ -38,10 +38,10 @@ export class ProductComponent  implements OnInit{
       // $('meta[name=image_height]').remove();
 
       // this.meta.setTitle('abc');
-      // this.meta.setTag('og:url', 'http://bideptrai.com/category/2' );
+      // this.meta.setTag('og:url', 'http://hienminhco.com/category/2' );
       // this.meta.setTag('og:title', 'abcd');
       // this.meta.setTag('og:description', 'bcde');
-      // this.meta.setTag('og:image', 'http://bideptrai.com/assets/images/category/No6-01.jpg');
+      // this.meta.setTag('og:image', 'http://hienminhco.com/assets/images/category/No6-01.jpg');
       // this.meta.setTag('og:image:width', '300');
       // this.meta.setTag('og:image:height', '200');
 
@@ -89,17 +89,17 @@ export class ProductComponent  implements OnInit{
   }
 
   private loadMetaData() {
-    // $('head').append('<meta name="url" property="og:url" content="http://bideptrai.com/category/' + this.categoryDetail['id'] + '">');
+    // $('head').append('<meta name="url" property="og:url" content="http://hienminhco.com/category/' + this.categoryDetail['id'] + '">');
     // $('head').append('<meta name="title" property="og:title" content="' + this.categoryDetail['name'] + '">');
     // $('head').append('<meta name="description" property="og:description" content="' + this.categoryDetail['description'] + '">');
-    // $('head').append('<meta name="image" property="og:image" content="http://bideptrai.com/assets/images/category/' + this.categoryDetail['image'] + '">');
+    // $('head').append('<meta name="image" property="og:image" content="http://hienminhco.com/assets/images/category/' + this.categoryDetail['image'] + '">');
     // $('head').append('<meta name="image_width" property="og:image:width" content="300">');
     // $('head').append('<meta name="image_height" property="og:image:height" content="200">');
     // this.meta.setTitle(this.categoryDetail['name']);
-    // this.meta.setTag('og:url', 'http://bideptrai.com/category/' + this.categoryDetail['id']);
+    // this.meta.setTag('og:url', 'http://hienminhco.com/category/' + this.categoryDetail['id']);
     // this.meta.setTag('og:title', this.categoryDetail['name']);
     // this.meta.setTag('og:description', this.categoryDetail['description']);
-    // this.meta.setTag('og:image', 'http://bideptrai.com/assets/images/category/' + this.categoryDetail['image']);
+    // this.meta.setTag('og:image', 'http://hienminhco.com/assets/images/category/' + this.categoryDetail['image']);
     // this.meta.setTag('og:image:width', '300');
     // this.meta.setTag('og:image:height', '200');
     

@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 $id = $_POST['id'];
 
-$sql = "DELETE FROM PRODUCT WHERE id='$id'";
+$sql = "DELETE FROM product WHERE id='$id'";
 
 $response = array();
 if ($conn->query($sql) === TRUE) {

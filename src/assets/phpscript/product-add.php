@@ -22,7 +22,7 @@ $price = $_POST['price'];
 $priority = $_POST['priority'];
 $video_url = $_POST['video_url'];
 
-$sql = "INSERT INTO PRODUCT (product_id, category_id, name,description, size, parent_image, children_image, price, priority, video_url)
+$sql = "INSERT INTO product (product_id, category_id, name,description, size, parent_image, children_image, price, priority, video_url)
 VALUES ('$product_id', '$category_id', '$name', '$description', '$size', '$parent_image', '$children_image', '$price', '$priority', '$video_url' )";
 
 $response = array();

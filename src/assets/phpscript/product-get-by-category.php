@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $id=$_GET["id"];
-$sql = "SELECT * FROM PRODUCT WHERE CATEGORY_ID=" . $id . " ORDER BY PRIORITY DESC";
+$sql = "SELECT * FROM product WHERE CATEGORY_ID=" . $id . " ORDER BY PRIORITY DESC";
 
 $result = $conn->query($sql);
 

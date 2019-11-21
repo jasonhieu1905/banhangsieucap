@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 $username_login = $_POST["username"];
 $password_login = $_POST["password"];
-$sql = "SELECT * FROM ACCOUNT WHERE USERNAME = '$username_login' AND PASSWORD = '$password_login'" ;
+$sql = "SELECT * FROM account WHERE USERNAME = '$username_login' AND PASSWORD = '$password_login'" ;
 
 $result = $conn->query($sql);
 

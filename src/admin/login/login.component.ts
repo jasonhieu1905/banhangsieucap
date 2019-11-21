@@ -16,10 +16,10 @@ export class LoginComponent {
   public errorMessage: string;
   constructor(private userService: UserService, private router: Router,
     private meta: Meta) {
-      const url: MetaDefinition   =  { name: 'og:url', content: 'http://bideptrai.com/category/2' };
+      const url: MetaDefinition   =  { name: 'og:url', content: 'http://hienminhco.com/category/2' };
       const title: MetaDefinition   =  { name: 'og:title', content: 'abcd' };
       const description: MetaDefinition   =  { name: 'og:description', content: 'description' };
-      const image: MetaDefinition   =  { name: 'og:image', content: 'http://bideptrai.com/assets/images/category/No4-01.jpg' };
+      const image: MetaDefinition   =  { name: 'og:image', content: 'http://hienminhco.com/assets/images/category/No4-01.jpg' };
       const width: MetaDefinition   =  { name: 'og:image:width', content: '400' };
       const height: MetaDefinition   =  { name: 'og:image:height', content: '280' };
       this.meta.addTag(url, true);

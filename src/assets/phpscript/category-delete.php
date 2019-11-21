@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 $id = $_POST['id'];
 
-$sql = "DELETE FROM CATEGORY WHERE id='$id'";
+$sql = "DELETE FROM category WHERE id='$id'";
 
 $response = array();
 if ($conn->query($sql) === TRUE) {

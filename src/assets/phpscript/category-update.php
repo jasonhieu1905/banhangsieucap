@@ -17,7 +17,7 @@ $description = $_POST['description'];
 $image = $_POST['image'];
 $priority_id = $_POST['priority_id'];
 
-$sql = "UPDATE CATEGORY SET name = '$name',
+$sql = "UPDATE category SET name = '$name',
 description = '$description', image= '$image', priority_id= '$priority_id'
 WHERE id = '$id'";
 
